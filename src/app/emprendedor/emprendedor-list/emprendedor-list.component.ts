@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Emprendedor } from '../emprendedor';
 import { EmprendedorService } from '../emprendedor.service';
 
