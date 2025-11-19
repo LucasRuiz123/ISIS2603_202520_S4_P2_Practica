@@ -1,16 +1,16 @@
-<div *ngIf="emprendedorDetail" style="margin-bottom: 2rem;">
+<div class="container mt-4" *ngIf="emprendedor"></div>
     <h3>{{emprendedorDetail.nombre}}</h3>
     <div>
         <div style="height: 300px; display: inline-block;">
-            <img [src]="emprendedorDetail.foto_url" alt="{{ emprendedorDetail.nombre }}" style="width: 80%; ">
+            <img [src]="emprendedorDetail.foto_url" alt="{{ emprendedor.nombre }}" style="width: 80%; ">
         </div>
         
         <div style="width: 50%; display: inline-block;">
-            <p><strong>Pregrado: </strong> {{emprendedorDetail.pregrado}} </p>
-            <p><strong>Genero: </strong> {{emprendedorDetail.genero}} </p>
+            <p><strong>Pregrado: </strong> {{emprendedor.pregrado}} </p>
+            <p><strong>Genero: </strong> {{emprendedor.genero}} </p>
             <p><strong>Emprendimientos: </strong></p>
             <ul>
-                <li *ngFor="let emprendimiento of emprendedorDetail.emprendimientos">{{ emprendimiento }}</li>
+                <li *ngFor="let emprendimiento of emprendedor.emprendimientos">{{ emprendimiento }}</li>
             </ul>
         </div>
     </div>

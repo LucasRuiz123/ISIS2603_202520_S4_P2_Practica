@@ -1,24 +1,22 @@
 <div class="container">
-    <h1 class="mt-4">Jovenes Emprendedores Colombianos</h1>
-
-    <table class="table table-bordered mt-4">
-        <thead>
-            <tr style="--bs-table-bg: #0ae98a; --bs-table-color: white;">
-                <th scope="col">Nombre</th>
-                <th scope="col">Foto</th>
-                <th scope="col">Genero</th>
-                <th scope="col">Pregrado</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let emprendedor of emprendedores" (click)="seleccionarEmprendedor(emprendedor)">
-                <td>{{ emprendedor.nombre }}</td>
-                <td><img [src]="emprendedor.foto_url" alt="{{ emprendedor.nombre }}" style="width: 50px; height: auto;"></td>
-                <td>{{ emprendedor.genero }}</td>
-                <td>{{ emprendedor.pregrado }}</td>
-            </tr>
-        </tbody>
-    </table>
     
-    <app-emprendedor-detail *ngIf="emprendedorSeleccionado" [emprendedor]="emprendedorSeleccionado"></app-emprendedor-detail>
+    <div>
+        <tbody>
+            @for(emprendedor of emprendedores; track emprendedor){
+            <tr>
+                <td>{{emprendedor.nombre}}</td>
+                <td>{{emprendedor.pregrado}}</td>
+                <td>{{emprendedor.genero}}</td>
+                <td>
+                    <button 
+                      class="btn btn-outline-primary btn-sm" 
+                      [routerLink]="['/emprendedores', emprendedor.id]">
+                      Ver detalle
+                    </button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </div>
 </div>
+
